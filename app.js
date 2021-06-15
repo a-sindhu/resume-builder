@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const config = require('./backend/config/config');
+const dbConnect = require('./backend/lib/dbConnect');
 
+dbConnect.connect();
 
  app.use(express.urlencoded({extended: true}));
  app.use(express.json());
@@ -22,6 +25,6 @@ app.get("/register", function(req, res){
     res.sendFile(filePathName);
 })
 
-app.listen(3000, function(){
-    console.log("Server Starting running on http://localhost:3000");
+app.listen(config.web_port, function(){
+    console.log("Server Starting running on http://localhost:"+config.web_port);
 })
