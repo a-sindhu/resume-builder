@@ -20,6 +20,10 @@ app.get("/login", function(req, res){
     filePathName=__dirname+'/frontend/html/login.html';
     res.sendFile(filePathName);
 })
+app.get("/edit", function(req, res){
+    filePathName=__dirname+'/frontend/html/edit.html';
+    res.sendFile(filePathName);
+})
 
 app.get("/register", function(req, res){
     filePathName=__dirname+'/frontend/html/register.html';
