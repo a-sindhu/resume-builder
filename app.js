@@ -9,7 +9,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, "frontend")));
 
 app.get("/", function(req, res){
-    res.send("Welcome to Resume Builder App!");
+    filePathName=__dirname+'/frontend/html/home.html';
+    res.sendFile(filePathName);
 })
 
 app.get("/login", function(req, res){
