@@ -1,0 +1,32 @@
+.block
+{
+    padding: 30px 30px 30px 30px;
+    margin-left: 320px;
+    margin-right: 320px;
+    border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+    background-color: skyblue;
+    border-style: solid;
+}
+#inputs{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: white;
+}
+#button
+{
+    width: 100px;
+    border-radius: 5px;
+    border-color: white;
+}
+.header
+{
+    color: black;
+    margin-left: 320px;
+    margin-right: 320px;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+    background-color: white;
+    border-style: solid;
+}
