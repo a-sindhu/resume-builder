@@ -1,290 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Builder</title>
-<style>
-* {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 50%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-input[type=number] {
-  width: 50%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-} 
-
-input[type=date] {
-  width: 25%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-} 
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Information</title>
 </head>
 <body>
-
-<div class="container" width=50%>
-    <h1>Personal Info:</h1>
-  <form action="/">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="email">Email Address:</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="email" name="email" placeholder="">
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-          <label for="phonenum">Contact No:</label>
-        </div>
-        <div class="col-75">
-          <input type="number" id="phonenum" name="phonenum" placeholder="">
-        </div>
-      </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="about">About</label>
-      </div>
-      <div class="col-75">
-        <textarea id="about" name="about" placeholder="" style="height:50px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-          <label for="address">Address</label>
-        </div>
-        <div class="col-75">
-            <textarea id="address" name="address" placeholder="" style="height:50px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Linked In</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <h1>Experience:</h1>
-      <div class="row">
-        <div class="col-25">
-          <label for="company">Company</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="company" name="company" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Title</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Period:</label>
-        </div>
-        <div class="col-75">
-            <input type="date" id="linkedin" name="linkedin" placeholder=""></input>
-            <input type="date" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Description</label>
-        </div>
-        <div class="col-75">
-            <textarea id="address" name="address" placeholder="" style="height:50px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <input type="submit" value="++ :)">
-        </div>
-    </div>
-      <h1>Projects:</h1>
-      <div class="row">
-        <div class="col-25">
-          <label for="company">Project Name</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="company" name="company" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Demo link:</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Description</label>
-        </div>
-        <div class="col-75">
-            <textarea id="address" name="address" placeholder="" style="height:50px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-25">
-            <input type="submit" value="++ :)">
-          </div>
-      </div>
-      <h1>Education:</h1>
-      <div class="row">
-        <div class="col-25">
-          <label for="company">Institute Name</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="company" name="company" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Degree</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Major</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Percentage:</label>
-        </div>
-        <div class="col-75">
-            <input type="number" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="linkedin">Period:</label>
-        </div>
-        <div class="col-75">
-            <input type="date" id="linkedin" name="linkedin" placeholder=""></input>
-            <input type="date" id="linkedin" name="linkedin" placeholder=""></input>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-25">
-            <input type="submit" value="++ :)">
-          </div>
-      </div>
-      <h1>Skills:</h1>
-      <div class="row">
-        <div class="col-25">
-          <label for="address">Skills:</label>
-        </div>
-        <div class="col-75">
-            <textarea id="address" name="address" placeholder="" style="height:50px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <input type="submit" value="want to add a section? Press me :)">
-        </div>
-    </div>
-     
+  <h2>Personal Information</h2>
+  <form action="">
+    First Name :<input type="text" placeholder="First Name" id="firstname"><br><br>
+    Last Name :<input type="text" placeholder="Last Name" id="lastname"><br><br>
+    Email ID :<input type="email" placeholder="Email ID" id="emailid"><br><br>
+    Phone Number :<input type="number" placeholder="Phone Number" id="phone number"><br><br>
+    Address :<textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea><br><br>
+    Linked In:<input type="url" placeholder="@LinkedIN" id="linkedin"><br><br>
     
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
+    Objective :<textarea name="objective" id="objective" cols="30" rows="5" placeholder="Objective"></textarea>
   </form>
-</div>
-
+  <h2>Education</h2>
+  <form action="" id="eduf">
+    Institute Name : <input type="text" id="schoolname" placeholder="School Name"><br><br>
+    Location/City : <input type="text" id="Location" placeholder="Location/City">
+    Period :<input type="date" name="e1period" id="e1period">
+    Description : <textarea name="e1des" id="e1des" cols="30" rows="5"></textarea>
+    
+  </form>
+  <button id="edu">Add</button>
+  <h2>Projects</h2>
+  <form action="" id="prof">
+      Project Name: <input type="text" id="pname">
+      Link : <input type="url" id="plink">
+      Description : <textarea  id="pdes" cols="30" rows="5"></textarea>
+      
+  </form>
+  <button id="pro">Add</button>
+  <h2>Experience</h2>
+  <form action="" id="expf">
+  </form>
+  <button id="exp">Add</button>
+  <h2>Skills</h2>
+  <form action="">
+    Skill :<input type="text" id="skill">
+    Rating : <input type="range" max="5" id="range"> 
+  </form>
+  <h2>Achievements</h2>
+  <form action="" id="achf">
+    Achievement : <input type="text" id="Ach" >
+  </form>
+  <button id="ach">Add</button>
+  <form action="" id="addf"></form>
+    <button id="custom">Click to Add a Additional Info</button>
 </body>
 </html>
