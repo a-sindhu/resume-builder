@@ -5,51 +5,77 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume Information</title>
+  <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
+
+
   <h2>Personal Information</h2>
   <form action="">
-    First Name :<input type="text" placeholder="First Name" id="firstname"><br><br>
-    Last Name :<input type="text" placeholder="Last Name" id="lastname"><br><br>
-    Email ID :<input type="email" placeholder="Email ID" id="emailid"><br><br>
-    Phone Number :<input type="number" placeholder="Phone Number" id="phone number"><br><br>
-    Address :<textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea><br><br>
-    Linked In:<input type="url" placeholder="@LinkedIN" id="linkedin"><br><br>
-    
-    Objective :<textarea name="objective" id="objective" cols="30" rows="5" placeholder="Objective"></textarea>
+    <div class="col-25">First Name</div> 
+    <div class="col-75"><input type="text" placeholder="First Name" id="firstname"></div><br><br>
+    <div class="col-25">Last Name </div>
+    <div class="col-75"><input type="text" placeholder="Last Name" id="lastname"></div><br><br>
+    <div class="col-25">Email ID </div>
+    <div class="col-75"><input type="email" placeholder="Email ID" id="emailid"></div><br><br>
+    <div class="col-25">Phone Number </div>
+    <div class="col-75"><input type="number" placeholder="Phone Number" id="phone number"></div><br><br>
+    <div class="col-25">Address </div>
+    <div class="col-75"><textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea></div><br><br>
+    <div class="col-25">Linked In</div>
+    <div class="col-75"><input type="url" placeholder="@LinkedIN" id="linkedin"></div><br><br>
+    <div class="col-25">Objective</div> 
+    <div class="col-75"><textarea name="objective" id="objective" cols="30" rows="5" placeholder="Objective"></textarea></div>
   </form>
+
   <h2>Education</h2>
   <form action="" id="eduf">
-    Institute Name : <input type="text" id="schoolname" placeholder="School Name"><br><br>
-    Location/City : <input type="text" id="Location" placeholder="Location/City">
-    Period :<input type="date" name="e1period" id="e1period">
-    Description : <textarea name="e1des" id="e1des" cols="30" rows="5"></textarea>
-    
+    <div class="col-25">Institute Name</div>
+    <div class="col-75"><input type="text" id="schoolname" placeholder="School Name"></div><br>
+    <div class="col-25">Location/City</div> 
+    <div class="col-75"><input type="text" id="Location" placeholder="Location/City"></div><br>
+    <div class="col-25">Period </div>
+    <div class="col-75"><input type="date" name="e1period" id="e1period"></div><br>
+    <div class="col-25">Description</div> 
+    <div class="col-75"><textarea name="e1des" id="e1des" cols="30" rows="5"></textarea></div><br><br>
   </form>
   <button id="edu">Add</button>
+
   <h2>Projects</h2>
   <form action="" id="prof">
-      Project Name: <input type="text" id="pname">
-      Link : <input type="url" id="plink">
-      Description : <textarea  id="pdes" cols="30" rows="5"></textarea>
-      
+      <div class="col-25">Project Name</div>
+      <div class="col-75"><input type="text" id="pname"></div><br>
+      <div class="col-25">Link</div> 
+      <div class="col-75"><input type="url" id="plink"></div><br>
+      <div class="col-25">Description</div> 
+      <div class="col-75"><textarea  id="pdes" cols="30" rows="5" placeholder="Brief description of project.."></textarea></div><br><br>
   </form>
   <button id="pro">Add</button>
+
   <h2>Experience</h2>
-  <form action="" id="expf">
-  </form>
+  <form action="" id="expf"></form>
   <button id="exp">Add</button>
+
   <h2>Skills</h2>
   <form action="">
-    Skill :<input type="text" id="skill">
-    Rating : <input type="range" max="5" id="range"> 
+    <div class="col-25">Skill</div>
+    <div class="col-75"><input type="text" id="skill"></div>
+    <div class="col-25">Rating</div>
+    <div class="col-75"><input type="range" max="5" id="range"></div><br><br>
   </form>
+  <button id="skl">Add</button>
+
   <h2>Achievements</h2>
   <form action="" id="achf">
-    Achievement : <input type="text" id="Ach" >
+    <div class="col-25">Achievement </div>
+    <div class="col-75"><input type="text" id="Ach" ></div>
   </form>
   <button id="ach">Add</button>
+
+  <br>
   <form action="" id="addf"></form>
-    <button id="custom">Click to Add a Additional Info</button>
+  <br>
+  <button id="custom">Click to Add a Additional Info</button>
+
 </body>
 </html>
