@@ -19,6 +19,7 @@
   "homepage": "https://github.com/a-sindhu/resume-builder#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "html-pdf": "^3.0.1",
     "mongoose": "^5.12.13",
     "path": "^0.12.7"
   }

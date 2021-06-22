@@ -3,8 +3,11 @@ const path = require('path');
 const app = express();
 const config = require('./backend/config/config');
 const dbConnect = require('./backend/lib/dbConnect');
-
+const pdf= require('html-pdf');
+const fs= require('fs');
 dbConnect.connect();
+var html = fs.readFileSync('./frontend/html/resume.html', 'utf-8');
+var options = { format: 'Letter' };
 
  app.use(express.urlencoded({extended: true}));
  app.use(express.json());
@@ -29,7 +32,17 @@ app.get("/register", function(req, res){
     filePathName=__dirname+'/frontend/html/register.html';
     res.sendFile(filePathName);
 })
-
+app.get("/res", function(req, res){
+    filePathName=__dirname+'/frontend/html/resume.html';
+    res.sendFile(filePathName);
+})
+app.get('/resume',function(req,res){
+    pdf.create(html, options).toFile('./output.pdf', function(err, res) {
+        if (err) return console.log(err);
+        console.log(res); 
+      });
+      res.sendFile(__dirname+'/output.pdf');
+});
 app.listen(config.web_port, function(){
     console.log("Server Starting running on http://localhost:"+config.web_port);
 })
