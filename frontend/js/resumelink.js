@@ -9,23 +9,27 @@ var address=document.getElementById("address").value;
 var linkedin=document.getElementById("linkedin").value;
 var objective=document.getElementById("objective").value;
 //conditions to be kept 
-
+var data;
 var dub="";
 if(linkedin!=null) dub=linkedin;
 a="<h1> "+firstname+lastname+" </h1> <br> <h6>"+phno+"</h6> <br> <h6>"+emailid+"</h6> <br> <h6>"+address+"</h6> <br> <h6>"+dub+"</h6> <br>";
-localStorage.setItem("avalue", a);
 if(objective==null){alert("fill the objective part !!"); return;}
 b="<p>"+objective+"</p> <br>";
-localStorage.setItem("bvalue", b);
-//document.getElementById("submit").innerHTML = "<a href=\"/resume\">Submit</a>";
-window.location.assign("http://localhost:3000/resume");
+data={
+    name : firstname+lastname,
+    phono : phno,
+    emailid : emailid,
+    address : address,
+    linkedin : dub,
+    objective :objective
+}
+//post /api/pdf {data}
+
+localStorage.setItem("values",data);
+
+console.log("im at last");
+document.getElementById("redirect").href = "/resume";
+document.getElementById("redirect").innerHTML = "Creste Resume PDF";
+
 }
 
-function caller(){
-    console.log("im called");
-    var pinfo=document.getElementById("header");
-    var a=localStorage.getItem("avalue");
-    pinfo.innerHTML=a; 
-    var minfo=document.getElementById("matter");
-   
-}
