@@ -6,7 +6,7 @@ const dbConnect = require('./backend/lib/dbConnect');
 const pdf= require('html-pdf');
 const fs= require('fs');
 dbConnect.connect();
-var html = fs.readFileSync('./frontend/html/resume.html', 'utf-8');
+
 var options = { format: 'Letter' };
 
  app.use(express.urlencoded({extended: true}));
@@ -37,6 +37,8 @@ app.get("/res", function(req, res){
     res.sendFile(filePathName);
 })
 app.get('/resume',function(req,res){
+    var html = fs.readFileSync('./frontend/html/resume.html', 'utf-8');
+    console.log(html);
     pdf.create(html, options).toFile('./output.pdf', function(err, res) {
         if (err) return console.log(err);
         console.log(res); 

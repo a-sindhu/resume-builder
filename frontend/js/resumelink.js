@@ -13,16 +13,19 @@ var objective=document.getElementById("objective").value;
 var dub="";
 if(linkedin!=null) dub=linkedin;
 a="<h1> "+firstname+lastname+" </h1> <br> <h6>"+phno+"</h6> <br> <h6>"+emailid+"</h6> <br> <h6>"+address+"</h6> <br> <h6>"+dub+"</h6> <br>";
-console.log(a);
+localStorage.setItem("avalue", a);
 if(objective==null){alert("fill the objective part !!"); return;}
 b="<p>"+objective+"</p> <br>";
-
+localStorage.setItem("bvalue", b);
+//document.getElementById("submit").innerHTML = "<a href=\"/resume\">Submit</a>";
+window.location.assign("http://localhost:3000/resume");
 }
 
 function caller(){
     console.log("im called");
     var pinfo=document.getElementById("header");
-    console.log("string is "+a);
-    pinfo.outerHTML=a; 
+    var a=localStorage.getItem("avalue");
+    pinfo.innerHTML=a; 
     var minfo=document.getElementById("matter");
+   
 }
