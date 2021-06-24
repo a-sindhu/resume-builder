@@ -1,3 +1,6 @@
+
+const pdf= require('html-pdf');
+const fs= require('fs');
 var a="",b="";
 function forming(){
     console.log("function is called");
@@ -27,5 +30,10 @@ function caller(){
     var a=localStorage.getItem("avalue");
     pinfo.innerHTML=a; 
     var minfo=document.getElementById("matter");
-   
+    var html = fs.readFileSync('./frontend/html/resume.html', 'utf-8');
+    console.log(html);
+    pdf.create(html, options).toFile('./output.pdf', function(err, res) {
+        if (err) return console.log(err);
+        console.log(res); 
+      });
 }

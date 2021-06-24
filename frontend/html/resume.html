@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/resume.css">
 
 </head>
-    <body>
+    <body onload="caller()">
 
     <div id="header">
       
@@ -19,15 +19,5 @@
 
     
 </body>
-<script>
-    function caller(){
-    console.log("im called");
-    var pinfo=document.getElementById("header");
-    var a=localStorage.getItem("avalue");
-    pinfo.innerHTML=a; 
-    var minfo=document.getElementById("matter");
-   
-      }
-caller();
-</script>
+<script src="/js/resumelink.js"></script>
 </html>

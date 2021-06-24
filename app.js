@@ -37,12 +37,7 @@ app.get("/res", function(req, res){
     res.sendFile(filePathName);
 })
 app.get('/resume',function(req,res){
-    var html = fs.readFileSync('./frontend/html/resume.html', 'utf-8');
-    console.log(html);
-    pdf.create(html, options).toFile('./output.pdf', function(err, res) {
-        if (err) return console.log(err);
-        console.log(res); 
-      });
+    
       res.sendFile(__dirname+'/output.pdf');
 });
 app.listen(config.web_port, function(){
