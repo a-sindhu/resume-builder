@@ -1,6 +1,4 @@
 
-const pdf= require('html-pdf');
-const fs= require('fs');
 var a="",b="";
 function forming(){
     console.log("function is called");
@@ -26,9 +24,19 @@ data={
     linkedin : dub,
     objective :objective
 }
-//post /api/pdf {data}
 
-localStorage.setItem("values",data);
+$.ajax({
+    url: "/api/pdf",
+    type: "POST",
+    data: data,
+    success: function(data) {
+       console.log("Success!")
+    },
+    error: function (xhr, status, error) {
+    alert(error);
+    }
+    });
+
 
 console.log("im at last");
 document.getElementById("redirect").href = "/resume";

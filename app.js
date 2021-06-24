@@ -36,20 +36,14 @@ app.get("/res", function(req, res){
     filePathName=__dirname+'/frontend/html/resume.html';
     res.sendFile(filePathName);
 })
-app.get("/resume", function(req, res){
-    if (typeof localStorage === "undefined" || localStorage === null) {
-        var LocalStorage = require('node-localstorage').LocalStorage;
-        localStorage = new LocalStorage('./scratch');
-     }
-     
-var data=localStorage.getItem("values");    
 
-
-
+app.get("/resume" , function(req,res){
     filePathName=__dirname+'/output.pdf';
-    res.sendFile(filePathName);
+  res.sendFile(filePathName);
 })
 app.post('/api/pdf',function(req,res){
+   // console.log(req.body);
+    var data = req.body;
     var html = fs.readFileSync("./frontend/html/resume.html", "utf8");
 var options = {
     format: "A3",
@@ -58,18 +52,20 @@ var options = {
 };
 var document = {
     html: html,
-    data:{ users : req.body},
+    data: data ,
     path: "./output.pdf",
     type: "",
   };
   pdf
   .create(document, options)
   .then((res) => {
-    console.log(res);
+   // console.log(res);
   })
   .catch((error) => {
     console.error(error);
   });
+  filePathName=__dirname+'/output.pdf';
+  res.sendFile(filePathName);
 })
 
 app.listen(config.web_port, function(){
