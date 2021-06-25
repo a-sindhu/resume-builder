@@ -13,11 +13,9 @@ var objective=document.getElementById("objective").value;
 var data;
 var dub="";
 if(linkedin!=null) dub=linkedin;
-a="<h1> "+firstname+lastname+" </h1> <br> <h6>"+phno+"</h6> <br> <h6>"+emailid+"</h6> <br> <h6>"+address+"</h6> <br> <h6>"+dub+"</h6> <br>";
-if(objective==null){alert("fill the objective part !!"); return;}
-b="<p>"+objective+"</p> <br>";
+if(objective==null || objective==""){alert("fill the objective part !!"); return;}
 data={
-    name : firstname+lastname,
+    name : firstname+" "+lastname,
     phono : phno,
     emailid : emailid,
     address : address,
