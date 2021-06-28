@@ -23,6 +23,102 @@ data={
     objective :objective
 }
 
+var ed1,ed2,ed3;
+
+var ed1s=document.getElementById("schoolname1").value;
+var ed1l=document.getElementById("location1").value;
+var ed1p1=document.getElementById("e1period1").value;
+var ed1p2=document.getElementById("e1period2").value;
+var ed1d=document.getElementById("e1des").value;
+
+var ed2s=document.getElementById("schoolname2").value;
+var ed2l=document.getElementById("location2").value;
+var ed2p1=document.getElementById("e2period1").value;
+var ed2p2=document.getElementById("e2period2").value;
+var ed2d=document.getElementById("e2des").value;
+var ed3s=document.getElementById("schoolname3").value;
+var ed3l=document.getElementById("location3").value;
+var ed3p1=document.getElementById("e3period1").value;
+var ed3p2=document.getElementById("e3period2").value;
+var ed3d=document.getElementById("e3des").value;
+
+ed1={ed1s,ed1l,ed1p1,ed1p2,ed1d};
+ed2={ed2s,ed2l,ed2p1,ed2p2,ed2d};
+ed3={ed3s,ed3l,ed3p1,ed3p2,ed3d};
+
+data.push(ed1);
+data.push(ed2);
+data.push(ed3);
+
+var pro1,pro2,pro3;
+var pro1n=document.getElementById("pname1").value;
+var pro1l=document.getElementById("plink1").value;
+var pro1d=document.getElementById("p1des").value;
+
+var pro2n=document.getElementById("pname2").value;
+var pro2l=document.getElementById("plink2").value;
+var pro2d=document.getElementById("p2des").value;
+
+var pro3n=document.getElementById("pname3").value;
+var pr3l=document.getElementById("plink3").value;
+var pro3d=document.getElementById("p3des").value;
+
+pro1={pro1n,pro1l,pro1d};
+pro2={pro2n,pro2l,pro2d};
+pro3={pro3n,pro3l,pro3d};
+
+data.push(pro1);
+data.push(pro2);
+data.push(pro3);
+
+var exp1,exp2,exp3;
+var exp1n=document.getElementById("companyname1").value;
+var exp1w=document.getElementById("ex1des").value;
+
+var exp2n=document.getElementById("companyname2").value;
+var exp2w=document.getElementById("ex2des").value;
+
+var exp3n=document.getElementById("companyname3").value;
+var exp3w=document.getElementById("ex3des").value;
+
+exp1={exp1n,exp1w};
+exp2={exp2n,exp2w};
+exp3={exp3n,exp3w};
+
+data.push(exp1);
+data.push(exp2);
+data.push(exp3);
+
+var skills={},mm=1;
+var sa=document.getElementById("skill1").value;
+var sar=document.getElementById("range1").value;
+if(sa!= "" || sa != null) mm=0,skills.push({sa,sar});
+var sb=document.getElementById("skill2").value;
+var sbr=document.getElementById("range2").value;
+if(sb!= "" || sb != null) mm=0,skills.push({sb,sbr});
+var sc=document.getElementById("skill3").value;
+var scr=document.getElementById("range3").value;
+if(sc!= "" || sc != null) mm=0,skills.push({sc,scr});
+
+var sd=document.getElementById("skill4").value;
+var sdr=document.getElementById("range4").value;
+if(sd!= "" || sd != null) mm=0,skills.push({sd,sdr});
+
+var se=document.getElementById("skill5").value;
+var ser=document.getElementById("range5").value;
+if(se!= "" || se != null) mm=0,skills.push({se,ser});
+
+var sf=document.getElementById("skill6").value;
+var sfr=document.getElementById("range6").value;
+if(sf!= "" || sf != null) mm=0,skills.push({sf,sfr});
+if(mm) {alert("enter a Skill !!");return;}
+
+data.push(skills);
+
+ var ach=document.getElementById("ach").value;
+data.push(ach);
+
+console.log(data);
 $.ajax({
     url: "/api/pdf",
     type: "POST",
@@ -37,8 +133,8 @@ $.ajax({
 
 
 console.log("im at last");
-document.getElementById("redirect").href = "/resume";
-document.getElementById("redirect").innerHTML = "Creste Resume PDF";
+document.document.getElementById("redirect").href = "/resume";
+document.document.getElementById("redirect").innerHTML = "Creste Resume PDF";
 
 }
 
