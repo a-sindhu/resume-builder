@@ -1,5 +1,6 @@
 body {
-    background: url("/images/background.jpg");
+   /* background: url("/images/background.jpg"); */
+   background-color: rgb(193, 226, 139);
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,20 +76,32 @@ textarea {
   }
 
   .col-25 {
-    float: left;
-    width: 25%;
+    
+    width: 15%;
     margin: auto;
     display: block;
     font-size: 20px;
   }
   
   .col-75 {
-    float: left;
-    width: 75%;
+    width: 25%;
     margin: auto;
     display: block;
     margin-top: 6px;
   }
+  .col-35 {
+    width: 15%;
+    margin: auto;
+    display: block;
+    font-size: 20px;
+  }
+  
+  .col-85 {
+    width: 25%;
+    margin: auto;
+    display: block;
+    margin-top: 6px;
+  }  
   
 h2{
     color: blueviolet;
