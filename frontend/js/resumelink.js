@@ -47,11 +47,11 @@ var ed3p1=document.getElementById("e3period1").value;
 var ed3p2=document.getElementById("e3period2").value;
 var ed3d=document.getElementById("e3des").value;
 
-ed1={ed1s,ed1l,ed1p1,ed1p2,ed1d};
-ed2={ed2s,ed2l,ed2p1,ed2p2,ed2d};
-ed3={ed3s,ed3l,ed3p1,ed3p2,ed3d};
+ed1={'ed1s':ed1s,'ed1l':ed1l,'ed1p1':ed1p1,'ed1p2':ed1p2,'ed1d':ed1d};
+ed2={'ed1s':ed2s,'ed1l':ed2l,'ed1p1':ed2p1,'ed1p2':ed2p2,'ed1d':ed2d};
+ed3={'ed1s':ed3s,'ed1l':ed3l,'ed1p1':ed3p1,'ed1p2':ed3p2,'ed1d':ed3d};
 
-data['education']={ed1,ed2,ed3};
+data['education']=[ed1,ed2,ed3];
 
 var pro1,pro2,pro3;
 var pro1n=document.getElementById("pname1").value;
@@ -66,11 +66,11 @@ var pro3n=document.getElementById("pname3").value;
 var pro3l=document.getElementById("plink3").value;
 var pro3d=document.getElementById("p3des").value;
 
-pro1={pro1n,pro1l,pro1d};
-pro2={pro2n,pro2l,pro2d};
-pro3={pro3n,pro3l,pro3d};
+pro1={'pro1n':pro1n,'pro1l':pro1l,'pro1d':pro1d};
+pro2={'pro1n':pro2n,'pro1l':pro2l,'pro1d':pro2d};
+pro3={'pro1n':pro3n,'pro1l':pro3l,'pro1d':pro3d};
 
-data['project']={pro1,pro2,pro3};
+data['project']=[pro1,pro2,pro3];
 
 var exp1,exp2,exp3;
 var exp1n=document.getElementById("companyname1").value;
@@ -82,34 +82,34 @@ var exp2w=document.getElementById("ex2des").value;
 var exp3n=document.getElementById("companyname3").value;
 var exp3w=document.getElementById("ex3des").value;
 
-exp1={exp1n,exp1w};
-exp2={exp2n,exp2w};
-exp3={exp3n,exp3w};
+exp1={'exp1n':exp1n,'exp1w':exp1w};
+exp2={'exp1n':exp2n,'exp1w':exp2w};
+exp3={'exp1n':exp3n,'exp1w':exp3w};
 
-data['experience']={exp1,exp2,exp3};
+data['experience']=[exp1,exp2,exp3];
 
 var skill=[],mm=1;
 var sa=document.getElementById("skill1").value;
 var sar=document.getElementById("range1").value;
-if(sa!= "" || sa != null) mm=0,skill.push([sa,sar]);
+if(sa!= "" ) mm=0,skill.push({'sa':sa,'sar':sar});
 var sb=document.getElementById("skill2").value;
 var sbr=document.getElementById("range2").value;
-if(sb!= "" || sb != null) mm=0,skill.push([sb,sbr]);
+if(sb!= "") mm=0,skill.push({'sa':sb,'sar':sbr});
 var sc=document.getElementById("skill3").value;
 var scr=document.getElementById("range3").value;
-if(sc!= "" || sc != null) mm=0,skill.push([sc,scr]);
+if(sc!= "" ) mm=0,skill.push({'sa':sc,'sar':scr});
 
 var sd=document.getElementById("skill4").value;
 var sdr=document.getElementById("range4").value;
-if(sd!= "" || sd != null) mm=0,skill.push([sd,sdr]);
+if(sd!= "" ) mm=0,skill.push({'sa':sd,'sar':sdr});
 
 var se=document.getElementById("skill5").value;
 var ser=document.getElementById("range5").value;
-if(se!= "" || se != null) mm=0,skill.push([se,ser]);
+if(se!= "" ) mm=0,skill.push({'sa':se,'sar':ser});
 
 var sf=document.getElementById("skill6").value;
 var sfr=document.getElementById("range6").value;
-if(sf!= "" || sf != null) mm=0,skill.push([sf,sfr]);
+if(sf!= "" ) mm=0,skill.push({'sa':sf,'sar':sfr});
 if(mm) {alert("enter a Skill !!");return;}
 
 data['skills']=skill;

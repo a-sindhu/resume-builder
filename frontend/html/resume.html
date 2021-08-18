@@ -18,12 +18,42 @@
        <h3>{{this.emailid}}</h3>
         <h3>{{this.address}}</h3>
          <h3>{{this.dub}}</h3> 
-         
-
     </div>
     <div id="matter">
+       <h2>Resume Objective</h2>
         <p>{{this.objective}}</p><br>
-       
+      <div> <h2>Education</h2>
+       {{#each education}}
+       <h3>{{this.ed1s}},{{this.ed1l}} <span style="text-align: end;">{{this.ed1p1}}-{{this.ed1p2}}</span></h2>
+<h3>{{this.ed1d}}</h3>
+<br><br>
+       {{/each}}
+    </div>
+    <div>
+        <h2>Experience</h2>
+        {{#each experience}}
+        <h3>{{this.exp1n}}</h3>
+        <p>{{exp1w}}</p>
+        {{/each}}
+    </div>
+    <div>
+        <h2>Skills</h2>
+        {{#each skills}}
+        <h3>{{this.sa}} <span >{{this.sar}}</span></h3>
+        {{/each}}
+    </div>
+<div>
+    <h2>Projects</h2>
+    {{#each project}}
+      <h3>{{this.pro1n}}</h3>
+      <h4>{{this.pro1l}}</h4>
+      <p>{{this.pro1d}}</p>
+      {{/each}}
+</div>
+<div>
+    <h2>Achievements</h2>
+    <h3>{{this.Achievement}}</h3>
+</div>
     </div>
 </body>
 </html>
