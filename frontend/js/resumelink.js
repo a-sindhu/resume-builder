@@ -15,12 +15,17 @@ var dub="";
 if(linkedin!=null) dub=linkedin;
 if(objective==null || objective==""){alert("fill the objective part !!"); return;}
 data={
-    name : firstname+" "+lastname,
-    phono : phno,
-    emailid : emailid,
-    address : address,
-    linkedin : dub,
-    objective :objective
+    'name' : firstname+" "+lastname,
+    'phono' : phno,
+    'emailid' : emailid,
+    'address' : address,
+    'linkedin' : dub,
+    'objective' :objective,
+    'education' :{},
+    'project' :{},
+    'experience' :{},
+    'skills' :{},
+    'Achievement' :""
 }
 
 var ed1,ed2,ed3;
@@ -46,9 +51,7 @@ ed1={ed1s,ed1l,ed1p1,ed1p2,ed1d};
 ed2={ed2s,ed2l,ed2p1,ed2p2,ed2d};
 ed3={ed3s,ed3l,ed3p1,ed3p2,ed3d};
 
-data.push(ed1);
-data.push(ed2);
-data.push(ed3);
+data['education']={ed1,ed2,ed3};
 
 var pro1,pro2,pro3;
 var pro1n=document.getElementById("pname1").value;
@@ -60,16 +63,14 @@ var pro2l=document.getElementById("plink2").value;
 var pro2d=document.getElementById("p2des").value;
 
 var pro3n=document.getElementById("pname3").value;
-var pr3l=document.getElementById("plink3").value;
+var pro3l=document.getElementById("plink3").value;
 var pro3d=document.getElementById("p3des").value;
 
 pro1={pro1n,pro1l,pro1d};
 pro2={pro2n,pro2l,pro2d};
 pro3={pro3n,pro3l,pro3d};
 
-data.push(pro1);
-data.push(pro2);
-data.push(pro3);
+data['project']={pro1,pro2,pro3};
 
 var exp1,exp2,exp3;
 var exp1n=document.getElementById("companyname1").value;
@@ -85,38 +86,36 @@ exp1={exp1n,exp1w};
 exp2={exp2n,exp2w};
 exp3={exp3n,exp3w};
 
-data.push(exp1);
-data.push(exp2);
-data.push(exp3);
+data['experience']={exp1,exp2,exp3};
 
-var skills={},mm=1;
+var skill=[],mm=1;
 var sa=document.getElementById("skill1").value;
 var sar=document.getElementById("range1").value;
-if(sa!= "" || sa != null) mm=0,skills.push({sa,sar});
+if(sa!= "" || sa != null) mm=0,skill.push([sa,sar]);
 var sb=document.getElementById("skill2").value;
 var sbr=document.getElementById("range2").value;
-if(sb!= "" || sb != null) mm=0,skills.push({sb,sbr});
+if(sb!= "" || sb != null) mm=0,skill.push([sb,sbr]);
 var sc=document.getElementById("skill3").value;
 var scr=document.getElementById("range3").value;
-if(sc!= "" || sc != null) mm=0,skills.push({sc,scr});
+if(sc!= "" || sc != null) mm=0,skill.push([sc,scr]);
 
 var sd=document.getElementById("skill4").value;
 var sdr=document.getElementById("range4").value;
-if(sd!= "" || sd != null) mm=0,skills.push({sd,sdr});
+if(sd!= "" || sd != null) mm=0,skill.push([sd,sdr]);
 
 var se=document.getElementById("skill5").value;
 var ser=document.getElementById("range5").value;
-if(se!= "" || se != null) mm=0,skills.push({se,ser});
+if(se!= "" || se != null) mm=0,skill.push([se,ser]);
 
 var sf=document.getElementById("skill6").value;
 var sfr=document.getElementById("range6").value;
-if(sf!= "" || sf != null) mm=0,skills.push({sf,sfr});
+if(sf!= "" || sf != null) mm=0,skill.push([sf,sfr]);
 if(mm) {alert("enter a Skill !!");return;}
 
-data.push(skills);
+data['skills']=skill;
 
  var ach=document.getElementById("ach").value;
-data.push(ach);
+data['Achievement']=ach;
 
 console.log(data);
 $.ajax({
@@ -133,8 +132,8 @@ $.ajax({
 
 
 console.log("im at last");
-document.document.getElementById("redirect").href = "/resume";
-document.document.getElementById("redirect").innerHTML = "Creste Resume PDF";
+document.getElementById("redirect").href = "/resume";
+document.getElementById("redirect").innerHTML = "Create Resume PDF";
 
 }
 
