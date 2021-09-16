@@ -15,6 +15,7 @@
 
   <h2>Personal Information</h2><br>
   <form class="form-inline" action="">
+    
     <div class="form-group">First Name:</div> &nbsp;
     <input type="text" placeholder="First Name" class="form-control" id="firstname">&nbsp;&nbsp;
     
@@ -46,8 +47,8 @@
     <div class="form-group"><input type="text" id="location1" class="form-control" placeholder="Location/City"></div>&nbsp;&nbsp;
 
     <div class="form-group">Period: </div>&nbsp;
-    <div class="form-group"><input type="date" name="e1period1"  id="e1period1"></div>&nbsp; 
-    <div class="form-group"><input type="date" name="e1period2" id="e1period2"></div>&nbsp;
+    <div class="form-group"><input type="month" name="e1period1"  id="e1period1"></div>&nbsp; 
+    <div class="form-group"><input type="month" name="e1period2" id="e1period2"></div>&nbsp;
     <br><br>
     <div class="form-group">Description: </div>&nbsp;
     <div class="form-group"><textarea name="e1des" id="e1des" class="form-control" cols="30" rows="5"></textarea></div>&nbsp;&nbsp; 
@@ -61,8 +62,8 @@
     <div class="form-group"><input type="text" id="location2" class="form-control" placeholder="Location/City"></div>&nbsp;&nbsp;
 
     <div class="form-group">Period: </div>&nbsp;
-    <div class="form-group"><input type="date" name="e2period" id="e2period1"></div>&nbsp; 
-    <div class="form-group"><input type="date" name="e2period2" id="e2period2"></div>&nbsp;
+    <div class="form-group"><input type="month" name="e2period" id="e2period1"></div>&nbsp; 
+    <div class="form-group"><input type="month" name="e2period2" id="e2period2"></div>&nbsp;
     <br><br>
     <div class="form-group">Description: </div>&nbsp;
     <div class="form-group"><textarea name="e2des" id="e2des" class="form-control" cols="30" rows="5"></textarea></div>&nbsp;&nbsp;  
@@ -76,8 +77,8 @@
     <div class="form-group"><input type="text" id="location3" class="form-control" placeholder="Location/City"></div>&nbsp;&nbsp;
 
     <div class="form-group">Period:</div>&nbsp;
-    <div class="form-group"><input type="date" name="e3period" id="e3period1"></div>&nbsp; 
-    <div class="form-group"><input type="date" name="e3period2" id="e3period2"></div>&nbsp;
+    <div class="form-group"><input type="month" name="e3period" id="e3period1"></div>&nbsp; 
+    <div class="form-group"><input type="month" name="e3period2" id="e3period2"></div>&nbsp;
     <br><br> 
     <div class="form-group">Description: </div>&nbsp; 
     <div class="form-group"><textarea name="e3des" id="e3des" class="form-control" cols="30" rows="5"></textarea></div>&nbsp;&nbsp;  
@@ -206,7 +207,14 @@
   <br><br>
   <button id="submit" onclick="forming()" >Submit</button>
   <button><a href="" id="redirect"></a></button>
-</body>
+  
 
+</body>
+<script>
+  var load = function(event) {
+    var image = document.getElementById('displayIMG');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+  </script>
 <script src="/js/resumelink.js"></script>
 </html>

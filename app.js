@@ -46,7 +46,7 @@ app.post('/api/pdf',function(req,res){
     var data = req.body;
     var html = fs.readFileSync("./frontend/html/resume.html", "utf8");
 var options = {
-    format: "A3",
+    format: "A4",
     orientation: "portrait",
     border: "10mm",
 };
