@@ -27,6 +27,10 @@ app.get("/edit", function(req, res){
     filePathName=__dirname+'/frontend/html/edit.html';
     res.sendFile(filePathName);
 })
+app.get("/edit2", function(req, res){
+    filePathName=__dirname+'/frontend/html/edit2.html';
+    res.sendFile(filePathName);
+})
 
 app.get("/register", function(req, res){
     filePathName=__dirname+'/frontend/html/register.html';
@@ -38,6 +42,10 @@ app.get("/res", function(req, res){
 })
 
 app.get("/resume" , function(req,res){
+    filePathName=__dirname+'/output.pdf';
+  res.sendFile(filePathName);
+})
+app.get("/resume2" , function(req,res){
     filePathName=__dirname+'/output.pdf';
   res.sendFile(filePathName);
 })
@@ -67,6 +75,32 @@ var document = {
   filePathName=__dirname+'/output.pdf';
   res.sendFile(filePathName);
 })
+app.post('/api/pdf2',function(req,res){
+    // console.log(req.body);
+     var data = req.body;
+     var html = fs.readFileSync("./frontend/html/resume2.html", "utf8");
+ var options = {
+     format: "A4",
+     orientation: "portrait",
+     border: "10mm",
+ };
+ var document = {
+     html: html,
+     data: data ,
+     path: "./output.pdf",
+     type: "",
+   };
+   pdf
+   .create(document, options)
+   .then((res) => {
+    // console.log(res);
+   })
+   .catch((error) => {
+     console.error(error);
+   });
+   filePathName=__dirname+'/output.pdf';
+   res.sendFile(filePathName);
+ })
 
 app.listen(config.web_port, function(){
     console.log("Server Starting running on http://localhost:"+config.web_port);
