@@ -12,7 +12,8 @@ var objective=document.getElementById("objective").value;
 //conditions to be kept 
 var data;
 var dub="";
-if(linkedin!=null) dub=linkedin;
+if(linkedin!=null || linkedin!="") dub="LinkedIn :" + linkedin;
+console.log("dub="+dub);
 if(objective==null || objective==""){alert("fill the objective part !!"); return;}
 data={
     'name' : firstname+" "+lastname,
@@ -73,26 +74,20 @@ data['project']=[pro1,pro2,pro3];
 
 var skill=[],mm=1;
 var sa=document.getElementById("skill1").value;
-var sar=document.getElementById("range1").value;
-if(sa!= "" ) mm=0,skill.push({'sa':sa,'sar':sar});
+if(sa!= "" ) mm=0,skill.push({'sa':sa});
 var sb=document.getElementById("skill2").value;
-var sbr=document.getElementById("range2").value;
-if(sb!= "") mm=0,skill.push({'sa':sb,'sar':sbr});
+if(sb!= "") mm=0,skill.push({'sa':sb});
 var sc=document.getElementById("skill3").value;
-var scr=document.getElementById("range3").value;
-if(sc!= "" ) mm=0,skill.push({'sa':sc,'sar':scr});
+if(sc!= "" ) mm=0,skill.push({'sa':sc});
 
 var sd=document.getElementById("skill4").value;
-var sdr=document.getElementById("range4").value;
-if(sd!= "" ) mm=0,skill.push({'sa':sd,'sar':sdr});
+if(sd!= "" ) mm=0,skill.push({'sa':sd});
 
 var se=document.getElementById("skill5").value;
-var ser=document.getElementById("range5").value;
-if(se!= "" ) mm=0,skill.push({'sa':se,'sar':ser});
+if(se!= "" ) mm=0,skill.push({'sa':se});
 
 var sf=document.getElementById("skill6").value;
-var sfr=document.getElementById("range6").value;
-if(sf!= "" ) mm=0,skill.push({'sa':sf,'sar':sfr});
+if(sf!= "" ) mm=0,skill.push({'sa':sf});
 if(mm) {alert("enter a Skill !!");return;}
 
 data['skills']=skill;

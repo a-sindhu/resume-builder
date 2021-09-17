@@ -6,55 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <link rel="stylesheet" href="css/resume.css">
-    
 </head>
     <body>
 
-    <div id="header" style="background-color: rgb(52, 52, 252);
-    color: aliceblue;
+    <div id="header" style="color: rgb(16, 189, 131);
     ">
-      <h1>{{this.name}}</h1>
-       <h3>{{this.phono}}</h3> 
-       <h3>{{this.emailid}}</h3>
-        <h3>{{this.address}}</h3>
-         <h3>{{this.dub}}</h3> 
-       
-    </div>
+      <h1 style="font-size:xx-large;font-family: Arial, Helvetica, sans-serif; text-align: center;">{{this.name}}</h1>
+      </div>
+      
     <div id="matter">
-       <h2>Resume Objective</h2>
-        <p>{{this.objective}}</p><br>
-      <div> <h2>Education</h2>
-       {{#each education}}
-       <h3>{{this.ed1s}},{{this.ed1l}} <span style="text-align: end;">{{this.ed1p1}}-{{this.ed1p2}}</span></h2>
-<h3>{{this.ed1d}}</h3>
-<br><br>
-       {{/each}}
-    </div>
-    <div>
-        <h2>Experience</h2>
-        {{#each experience}}
-        <h3>{{this.exp1n}}</h3>
-        <p>{{exp1w}}</p>
-        {{/each}}
-    </div>
-    <div>
-        <h2>Skills</h2>
+        <div id="leftbox" style="float: left; width: 45%;">
+    
+                    <h2 style="color: rgb(16, 189, 131);">Resume Objective</h2>
+                <p>{{this.objective}}</p><br>
+        <h2 style="color: rgb(16, 189, 131);">Skills</h2>
         {{#each skills}}
-        <h3>{{this.sa}} <span >{{this.sar}}</span></h3>
+        <h4>{{this.sa}} </h4>
         {{/each}}
+        <h2 style="color: rgb(16, 189, 131);">Achievements</h2>
+        <p>{{this.Achievement}}</p>
+
+        <h2 style="color: rgb(16, 189, 131);">Contact Details</h2>
+        <h3>Phone Number:{{this.phono}}</h3> 
+         <h3>Email :{{this.emailid}}</h3>
+          <h3>Address :{{this.address}}</h3>
+           <h3>{{this.linkedin}}</h3>
+                      </div>
+                      <div style="float: left;width: 10%;"></div>
+        <div id="rightbox" style="float: right; width: 45%;">
+   
+            <h2 style="color: rgb(16, 189, 131);">Education</h2>
+                          {{#each education}}
+                      <h3>{{this.ed1s}},{{this.ed1l}}</h3>
+                        <h4>{{this.ed1p1}}-{{this.ed1p2}}</h4>
+                 <p>{{this.ed1d}}</p>
+                          {{/each}}
+            
+            <h2 style="color: rgb(16, 189, 131);">Experience</h2>
+             {{#each experience}}
+                <h3>{{this.exp1n}}</h3>
+             <p>{{exp1w}}</p>
+                {{/each}}
+            
+   
+            <h2 style="color: rgb(16, 189, 131);">Projects</h2>
+            {{#each project}}
+             <h3>{{this.pro1n}}</h3>
+             <h4>{{this.pro1l}}</h4>
+             <p>{{this.pro1d}}</p>
+            {{/each}}
+        
+        
+        
+        
     </div>
-<div>
-    <h2>Projects</h2>
-    {{#each project}}
-      <h3>{{this.pro1n}}</h3>
-      <h4>{{this.pro1l}}</h4>
-      <p>{{this.pro1d}}</p>
-      {{/each}}
-</div>
-<div>
-    <h2>Achievements</h2>
-    <h3>{{this.Achievement}}</h3>
-</div>
     </div>
 </body>
 
