@@ -9,11 +9,12 @@ var phno=document.getElementById("phonenumber").value;
 var address=document.getElementById("address").value;
 var linkedin=document.getElementById("linkedin").value;
 var objective=document.getElementById("objective").value;
+
 //conditions to be kept 
 var data;
 var dub="";
 if(linkedin!=null) dub="LinkedIn :" + linkedin;
-if(objective==null || objective==""){alert("fill the objective part !!"); return;}
+if(objective==null || objective==""){alert("fill the Resume objective part !!"); return;}
 data={
     'name' : firstname+" "+lastname,
     'phono' : phno,
@@ -109,6 +110,7 @@ if(mm) {alert("enter a Skill !!");return;}
 data['skills']=skill;
 
  var ach=document.getElementById("ach").value;
+ if(ach=="") {alert("Enter Your Achievements");return;}
 data['Achievement']=ach;
 
 console.log(data);

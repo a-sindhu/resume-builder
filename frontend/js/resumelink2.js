@@ -9,6 +9,12 @@ var phno=document.getElementById("phonenumber").value;
 var address=document.getElementById("address").value;
 var linkedin=document.getElementById("linkedin").value;
 var objective=document.getElementById("objective").value;
+
+if(firstname=="") {alert("Write Your Firstname");return;}
+if(lastname=="") {alert("Write Your Lastname");return;}
+if(emailid=="") {alert("Write Your Email Id");return;}
+if(phno.length()!=10) {alert("Enter Your 10 digit Phone Number");return;}
+if(address=="") {alert("Enter You Address");return ;}
 //conditions to be kept 
 var data;
 var dub="";
@@ -93,6 +99,7 @@ if(mm) {alert("enter a Skill !!");return;}
 data['skills']=skill;
 
  var ach=document.getElementById("ach").value;
+ if(ach=="") alert("Enter Your Achievements");
 data['Achievement']=ach;
 
 console.log(data);
