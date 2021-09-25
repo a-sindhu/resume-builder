@@ -13,7 +13,7 @@ var objective=document.getElementById("objective").value;
 if(firstname=="") {alert("Write Your Firstname");return;}
 if(lastname=="") {alert("Write Your Lastname");return;}
 if(emailid=="") {alert("Write Your Email Id");return;}
-if(phno.length()!=10) {alert("Enter Your 10 digit Phone Number");return;}
+if(phno.length!=10) {alert("Enter Your 10 digit Phone Number");return;}
 if(address=="") {alert("Enter You Address");return ;}
 //conditions to be kept 
 var data;
